@@ -1,0 +1,203 @@
+$primary:rgb(0, 140, 255);
+$secondary:rgb(0, 40, 84);
+$tertiary:#c7e6ff;
+$night:#2d2d2d;
+$light:#f8f8f8;
+
+
+.nav {
+    background-color: $secondary;
+    width: 100%;
+    margin: auto 0;
+    padding: 1rem;
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    a {
+        color: white;
+    }
+
+    input {
+        display: none;
+    }
+}
+
+.hero {
+    div {
+        padding: 2rem;
+        opacity: 1;
+        display: grid;
+        height: 100%;
+        place-items: center;
+        color: whitesmoke;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    h4 {
+        font-size: 20pt;
+        font-weight: bolder;
+    }
+
+    p {
+        width: 100%;
+    }
+
+    span {
+        color: $secondary;
+    }
+
+    .btn {
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background-color: $primary;
+        color: $light;
+        padding: 10px;
+        width: 50%;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        gap: -1rem;
+
+        input {
+            outline: none;
+            border: none;
+            width: 100%;
+            flex: 1;
+
+            &::placeholder {
+                color: $night;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+
+        button {
+            border-radius: none;
+            font-size: 16pt;
+            outline: none;
+            border: none;
+            color: $light;
+            background-color: $primary;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 50px;
+        }
+    }
+}
+
+.departments {
+    .section {
+        width: 100%;
+        margin: auto 0;
+        padding: 1rem;
+
+        section {
+            padding-top: 1rem;
+            display: grid;
+            place-items: start;
+            height: 100%;
+            grid-template-columns: auto;
+            gap: 1rem;
+        }
+
+        article {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid $night;
+
+            div {
+                width: 100%;
+                height: auto;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+            }
+
+            button {
+                outline: none;
+                width: 60%;
+                padding: 5px;
+                border: 2px solid $primary;
+                background-color: $light;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:30em) {
+    .nav {
+        input {
+            display: block;
+            border-radius: 20px;
+            padding: .5rem;
+            border: 1px solid $primary;
+            background-color: $secondary;
+            outline: none;
+
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+
+    .hero {
+        article {
+            .overlay {
+                p {
+                    width: 50%;
+                }
+
+                button {
+                    width: 20%
+                }
+            }
+
+            form {
+                width: 50%;
+
+                button {
+                    width: 10px;
+                }
+
+                input {
+                    &::placeholder {
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+
+    .departments {
+        .section {
+            section {
+                grid-template-columns: auto auto auto;
+            }
+        }
+    }
+
+}

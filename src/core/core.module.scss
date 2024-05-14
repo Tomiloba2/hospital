@@ -1,0 +1,146 @@
+.nav {
+    width: 100vw;
+
+    article {
+        width: 100%;
+        margin: auto 0;
+        height: auto;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        transition: 1s ease-in-out;
+
+        li {
+            text-align: center;
+        }
+
+        a {
+            &:hover {
+                color: #ec6e1a;
+            }
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        button {
+            width: 80px;
+            padding: .5vw;
+            border-radius: 25px;
+        }
+    }
+}
+
+.footer {
+    color: whitesmoke;
+    background-color: #2d2d2d;
+    border-top-right-radius: 2rem;
+
+    article {
+        margin: auto 0;
+        padding: 1rem;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    section {
+        flex-shrink: 0;
+    }
+
+    h4 {
+        padding: 2px;
+        padding-bottom: 1rem;
+    }
+
+    .p {
+        width: 70%;
+        color: whitesmoke;
+        padding-bottom: .5rem;
+    }
+
+    a {
+        color: whitesmoke;
+
+        &:hover {
+            color: #008cff;
+            text-decoration: underline;
+        }
+    }
+
+    i {
+        color: #008cff;
+        font-size: 1.5rem;
+    }
+
+    ol {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1vh;
+    }
+    span{
+        padding-left: 5px;
+    }
+
+    form {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        label {
+            display: none;
+        }
+
+        input {
+            padding: 5px;
+            width: 70%;
+            outline: none;
+            background-color: #2d2d2d;
+            border: none;
+        }
+
+        input[type='text'] {
+            border-bottom: 1px solid whitesmoke;
+        }
+
+        input::placeholder {
+            color: whitesmoke;
+            text-align: left;
+            font-size: medium;
+            text-transform: uppercase;
+        }
+
+        input[type='submit'] {
+            background-color: #008cff;
+            color: white;
+            border-radius: 10px;
+        }
+    }
+    .copyright{
+        text-align: center;
+        padding: 1rem 0;
+    }
+}
+
+/* 
+@media screen and (min-width:45em) {
+    .footer{
+        section{
+            flex:1
+        }
+    }
+} */

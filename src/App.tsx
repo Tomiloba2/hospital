@@ -1,33 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Root } from './core/Root'
+import { HomeRoot } from './home/Root'
+import { Home } from './home/pages/Home'
+import { Departments } from './home/pages/Departments'
+import { Department } from './home/pages/Department'
+import { About } from './home/pages/About'
+import { Contact } from './home/pages/Contact'
+import { Hotline } from './home/pages/Hotline'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const router = createBrowserRouter([
+    {
+      element: <Root />,
+      children: [
+        {
+          path: '/',
+          element: <HomeRoot />,
+          children: [
+            { path: '/', element: <Home/> },
+            { path: '/department', element: <Departments/> },
+            { path: '/department/:id', element: <Department/> },
+            { path: '/about', element: <About/> },
+            { path: '/contact', element: <Contact/> },
+            { path: '/hotline', element: <Hotline/> }
+          ]
+        }/* ,
+        {
+          path: '/services',
+          children: [
+            { path: '/services', element: '' },
+            { path: '/packages', element: '' },
+            { path: '/packages/:id', element: '' },
+            { path: '/consultations', element: '' },
+            { path: '/consultations/:id', element: '' },
+            { path: '/more', element: '' }
+          ]
+        },
+        {
+          path: '/schedule',
+          children: [
+            { path: '/schedule', element: '' },
+            { path: '/shedule/:id', element: '' },
+            { path: '/department/:id', element: '' },
+            { path: '/careers', element: '' },
+            { path: '/company-policy', element: '' }
+          ]
+        } */
+      ]
+    }
+  ])
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main>
+        <RouterProvider router={router} />
+      </main>
     </>
   )
 }
